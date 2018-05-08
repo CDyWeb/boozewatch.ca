@@ -1,0 +1,94 @@
+@import url('http://fonts.googleapis.com/css?family=Poiret+One');
+/* global styles */
+* {
+	margin:0px;
+	padding:0px;
+}
+body {
+  font:20px "Poiret One", Arial, Helvetica, sans-serif;
+  padding:10px;
+}
+p {
+	margin:0px;
+	padding:0px;
+}
+ul {
+	margin:0px;
+	padding:0px;
+}
+input {
+	border:1px solid #888;
+}
+input.error {
+	border:1px solid #F00;
+}
+input.button {
+  min-width:100px;
+  padding:0 5px;
+}
+a {
+	text-decoration:none;
+}
+a:hover {
+	color:#5a5a5a;
+	text-decoration:underline;
+}
+a IMG {
+  border:0;
+}
+fieldset {
+	border:0;
+	padding:5px;
+}
+.clear {
+	margin:0px;
+	padding:0px;
+	height:0px;
+	font-size:0px;
+	clear:both;
+}
+ADDRESS {
+  font-style:normal;
+}
+
+H1 {
+  font-size:18px;
+  line-height:28px;
+  font-weight:bold;
+  margin:0 0 1em;
+}
+H2 {
+  font-size:15px;
+  line-height:25px;
+  font-weight:bold;
+  margin:0 0 1em;
+}
+H3 {
+  font-size:12px;
+  line-height:22px;
+  font-weight:bold;
+  margin:0 0 1em;
+}
+
+/* content */
+BODY {
+}
+UL {
+  margin:1em;
+}
+p {
+	margin:0 0 1em;
+	padding:0px;
+  clear:both;
+}
+FIELDSET LABEL {
+  width:150px;
+  float:left;
+}
+
+h1 {
+  font-size:36px;
+}
+h2,h3,h4,h5,h6 {
+}
+

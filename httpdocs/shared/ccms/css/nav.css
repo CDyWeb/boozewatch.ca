@@ -1,0 +1,46 @@
+@import url("style.css");
+
+BODY {
+	
+}
+
+#outerDiv {
+	left:0px;
+	top:0px;
+	height: 100%;
+	width: 100%;
+}
+
+#nav {
+	border-right:1px solid #A2A2A2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0; /* IE doesn't read this */
+	bottom: 0; /* IE doesn't read this */ 
+	/* IE only needs the next lines */
+	height: expression(outerDiv.offsetHeight-1);
+	width: expression(outerDiv.offsetWidth-1);
+}
+
+.dijitTreeLabel {
+	cursor:pointer;
+}
+
+.dijitAccordionText {
+	display:block;
+	cursor: pointer;
+	font-family: 'Andale Mono', sans-serif;
+	font-size: 12px;
+	background: #D2E0E6;
+	color: #528CE0;
+	border: 1px solid #f5f5f5;
+	border-right-color: #ddd;
+	border-bottom-color: #ddd;
+	padding: 3px 5px 1px;
+}
+
+div.element p, div.element h4 {
+	margin:0px;
+	padding:4px;
+}

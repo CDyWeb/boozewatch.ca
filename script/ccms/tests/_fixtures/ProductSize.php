@@ -1,0 +1,63 @@
+<?
+
+require 'SizeGroup.php';
+require 'Size.php';
+
+$fixtures[tbl_name('productsize')]=array(
+  array(
+    'id'=>1,
+    'product'=>2,
+    'size'=>1,
+    'stock'=>21,
+    'price'=>'21.00',
+    'sku'=>'21',
+    'active'=>1,
+  ),
+  array(
+    'id'=>2,
+    'product'=>2,
+    'size'=>2,
+    'stock'=>null,
+    'price'=>'22.00',
+    'sku'=>'22',
+    'active'=>0,
+  ),
+  array(
+    'id'=>3,
+    'product'=>2,
+    'size'=>3,
+    'stock'=>23,
+    'price'=>'23.00',
+    'sku'=>'23',
+    'active'=>1,
+  ),
+  array(
+    'id'=>4,
+    'product'=>2,
+    'size'=>4,
+    'stock'=>24,
+    'price'=>'24.00',
+    'sku'=>'24',
+    'active'=>0,
+  ),
+  array(
+    'id'=>5,
+    'product'=>2,
+    'size'=>5,
+    'stock'=>25,
+    'price'=>'25.00',
+    'sku'=>'25',
+    'active'=>1,
+  ),
+  array(
+    'id'=>6,
+    'product'=>2,
+    'size'=>6,
+    'stock'=>26,
+    'price'=>'26.00',
+    'sku'=>'26',
+    'active'=>0,
+  ),
+);
+
+//end

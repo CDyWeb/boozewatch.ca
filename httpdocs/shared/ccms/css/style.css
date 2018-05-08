@@ -1,0 +1,134 @@
+* html #poststuff {
+	height: 100%; /* kill peekaboo bug in IE */
+}
+
+/* This is the Holly Hack \*/
+* html .wrap { height: 1% }
+/* For Win IE's eyes only */
+
+body {
+	padding:0;margin:0;
+	border: none;
+}
+a {
+	color: #00019b;
+	text-decoration: none;
+}
+.dtree a {
+	border:none;
+}
+
+a.delete:hover {
+	background: #c00;
+	color: #fff;
+}
+a.edit, a.delete, a.edit:hover, a.delete:hover {
+	border-bottom: none;
+	display: block;
+	padding: 5px 0;
+	text-align: center;
+}
+
+a.edit:hover {
+	background: #ccc;
+	color: #036;
+}
+
+a:visited {
+	color: #006;
+}
+
+a:hover {
+/*	border-bottom: 1px solid #3a75ae;*/
+	color: #069;
+}
+
+body	{
+	background: #f9fcfe;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+body, td {
+	font: 13px "Lucida Grande", "Lucida Sans Unicode", Tahoma, Verdana;
+}
+
+fieldset {
+	border: none;
+	padding: 3px;
+}
+
+fieldset label.selectit {
+	display: block;
+	font-size: 11px;
+	padding: 0 2px;
+}
+
+fieldset label.selectit:hover {
+	background: #e9e9e9;
+}
+
+fieldset legend {
+	padding: .1em .3em;
+}
+fieldset.options {
+	padding: 1em;
+}
+
+fieldset.options legend {
+	font-size: 16px;
+}
+
+form, label input {
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	margin:0px;
+	padding:10px 0;
+	font-size: 30px;
+}
+
+h2 {
+	border-bottom: .5em solid #f0f8ff;
+	color: #333;
+	font: normal 30px/5px;
+	margin: 5px 10px;
+}
+
+img, #footer a {
+	border: 0;
+}
+
+input:focus, textarea:focus, label:focus {
+	background: #fff;
+	border: 1px solid #686868;
+}
+
+label {
+	cursor: pointer;
+}
+
+li, dd {
+	margin-bottom: 6px;
+}
+
+p, li, dl, dd, dt {
+	line-height: 130%;
+}
+
+textarea, input, select {
+	background: #f4f4f4;
+	border: 1px solid #b2b2b2;
+	color: #000;
+	font:  13px Verdana, Arial, Helvetica, sans-serif;
+	margin: 1px;
+	padding: 3px;
+}
+INPUT.checkbox {
+  background-color:transparent;
+  border:0;
+}
+

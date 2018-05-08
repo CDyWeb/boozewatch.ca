@@ -1,0 +1,36 @@
+<html><head>
+  <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+  <script type="text/javascript">
+  </script>
+</head><body>
+  <textarea style="display:none" class="replaceme" id="replaceme:testfield" name="testfield" >Test CKEditor</textarea>
+		<div onclick="preview_click(this)" id="preview:testfield" class="ck-preview" style="width:600px;">
+			<p style='padding:5px;margin:0 0 10px 0;background-color:#444;color:#AAF;text-align:center;cursor:pointer'>Click here</p>
+			<iframe src="about:blank" name="iframe_testfield" id="iframe_testfield" border="0" frameborder="0" style="width:100%;height:300px"></iframe>
+			<script type="text/javascript">
+window.onload=function() {
+	var frame=window.iframe_testfield;
+	frame.document.open();
+	frame.document.write('<html><head><style type="text/css">@import url("cke.css");</style></head><body>'+document.getElementById('replaceme:testfield').value+'</body></html>');
+	frame.document.close();
+};
+			</script>
+		</div>
+<script type="text/javascript">
+function preview_click(element) {
+	var reg = /^preview:(.*)$/;
+	var match = reg.exec(element.id);
+	if (!match) return;
+	element.style.display='none';
+	replace_cke('replaceme:'+match[1]);
+}
+function cke(name) {
+	var element = document.getElementById('preview:'+name);
+	if (element) element.style.display='none';
+	replace_cke('replaceme:'+name);
+}
+function replace_cke(elm) {
+	CKEDITOR.replace(elm, {});
+}
+</script>
+</body></html>

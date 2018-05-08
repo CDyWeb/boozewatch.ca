@@ -1,0 +1,13 @@
+@import url("style.css");
+
+#login {
+	background:#FFFFFF none repeat scroll 0 0;
+	border:1px solid #A2A2A2;
+	margin:5em auto;
+	padding:1.5em;
+	width:25em;
+}
+
+#login_error {
+	color:red;
+}

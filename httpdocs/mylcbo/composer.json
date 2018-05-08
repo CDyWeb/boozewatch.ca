@@ -1,0 +1,6 @@
+{
+  "require"    : {
+    "pclzip/pclzip" : "*",
+    "phpmailer/phpmailer" : "*"
+  }
+}

@@ -1,0 +1,158 @@
+@import url("style.css");
+
+BODY {
+}
+
+#ccms-top {
+	margin:0 auto;
+	height:50px;
+  background-color:white;
+  border-bottom:3px solid #89F;
+}
+#ccms-top-home {
+	float:left;
+	padding:10px;
+}
+#ccms-top-menu {
+	float:right;
+	padding:8px;
+}
+#ccms-top-version {
+	clear:both;
+	float:right;
+	font-size:8px;
+	margin:-10px 4px 0 0;
+	padding:0;
+}
+#ccms-top H1 {
+	font-size:16px;
+	margin:0;
+	padding:0;
+}
+
+#pagepath {
+	margin: 5px 0 15px;
+}
+
+#content {
+	padding:5px;
+}
+
+#txt {
+}
+
+#ccms-crud-flash {
+  filter:alpha(opacity=75);
+  opacity: 0.75;
+  -moz-opacity:0.75;
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:30px;
+  padding:10px 150px;
+  text-align:center;
+}
+#ccms-crud-flash.inline {
+  padding:3px 150px;
+  height:20px;
+}
+#ccms-crud-flash.ok {
+  background-color:#DFD;
+}
+#ccms-crud-flash.error {
+  background-color:#FDD;
+}
+
+/* -- */
+
+.ck-preview {
+  margin-left:10px;
+  border:1px solid #CCC;
+  background-color:#FFF;
+}
+.ck-click-here {
+  padding:5px;
+  margin:0 0 10px 0;
+  background-color:#CDF !important;
+  color:#080;
+  text-align:center;
+  cursor:pointer
+}
+.ck-click-here:hover {
+  color:#060;
+  text-decoration:underline;
+}
+
+/* -- */
+
+.btnpanel {
+  padding:10px;
+  border-top:2px solid #DDD;
+  background-color:#EEE !important;
+}
+.btnpanel BUTTON {
+  min-width:80px;
+}
+.btnpanel BUTTON.minor {
+  background: transparent none;
+  border:0;
+  color:blue;
+}
+.btnpanel BUTTON.ok-button {
+  width:130px;
+}
+.btnpanel BUTTON.disabled {
+  background: #EEE none !important;
+  color:#DDD !important;
+}
+
+.tab-pane {
+  padding: 1em 1.4em;
+}
+.grayborder {
+  border:1px solid gray;
+}
+.editFieldSet {
+  display:inline-block;
+  width:700px;
+  padding:3px;
+}
+.editFieldSet div.form-group,
+.editFieldSet .p-ck {
+  margin:0;
+  padding:0.5em 0;
+  clear:both;
+  background-color: #FFF;
+}
+.editFieldSet TABLE.p, .editFieldSet DIV.p {
+  clear:both;
+  background-color: #FFF;
+}
+.editFieldSet LABEL {
+  font-weight:normal;
+}
+
+.editFieldSet .form-horizontal .form-group {
+  margin:0 !important;
+}
+
+.editFieldSet .input-group {
+ padding:0 10px !important;
+}
+
+.editFieldSet LABEL.error { 
+  display:inline !important;
+  float: none !important;
+  padding-left: .5em !important;
+  vertical-align: top;
+  color: red;
+}
+
+.editFieldSet .p-ck {
+  margin-left:10px;
+}
+
+.kiketable-th-text {
+  height:auto !important;
+}

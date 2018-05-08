@@ -1,0 +1,119 @@
+Options -Indexes
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+  ExpiresDefault "access plus 1 days"
+  ExpiresByType image/gif "access plus 1 years"
+  ExpiresByType image/png "access plus 1 years"
+  ExpiresByType image/jpeg "access plus 1 years"
+  ExpiresByType image/x-icon "access plus 1 years"
+  ExpiresByType application/x-javascript "access plus 1 years"
+  ExpiresByType text/css "access plus 1 years"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  SetOutputFilter DEFLATE
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE\s6 no-gzip
+  BrowserMatch \bMSIE\s7 !no-gzip !gzip-only-text/html
+  SetEnvIfNoCase Request_URI \
+       \.(?:gif|jpe?g|png|pdf|swf|ipk)$ no-gzip dont-vary
+  Header append Vary User-Agent env=!dont-vary
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  #RewriteBase /
+  
+##############################################################
+# Black lists
+# Origin: http://perishablepress.com/press/2009/02/03/eight-ways-to-blacklist-with-apaches-mod_rewrite/
+# --
+# Only GET and POST is allowed here
+# --
+  RewriteCond %{REQUEST_METHOD} ^(delete|head|trace|track) [NC]
+  RewriteRule ^(.*)$ - [F,L]
+
+# --
+# No strange chars in the Request e.g. : GET blog/index.html HTTP/1.1 
+# --
+  RewriteCond %{THE_REQUEST} ^.*(\\r|\\n|%0A|%0D).* [NC]
+  RewriteRule ^(.*)$ - [F,L]
+  
+# --
+# No strange referers
+# --
+  RewriteCond %{HTTP_REFERER} ^(.*)(<|>|'|%0A|%0D|%27|%3C|%3E|%00).* [NC,OR]
+  RewriteCond %{HTTP_REFERER} ^http://(www\.)?.*(-|.)?adult(-|.).*$  [NC,OR]
+  RewriteCond %{HTTP_REFERER} ^http://(www\.)?.*(-|.)?poker(-|.).*$  [NC,OR]
+  RewriteCond %{HTTP_REFERER} ^http://(www\.)?.*(-|.)?drugs(-|.).*$  [NC]
+  RewriteRule ^(.*)$ - [F,L]
+  
+# --
+# No strange chars in the Cookie
+# --
+  RewriteCond %{HTTP_COOKIE} ^.*(%0A|%0D|%27|%00).* [NC]
+  RewriteRule ^(.*)$ - [F,L]
+
+# --
+# No hacks in the URI
+# --
+  RewriteCond %{REQUEST_URI} ^.*(,|;|<|>|">|"<|\\\.\.\\).* [NC,OR]
+  RewriteCond %{REQUEST_URI} ^.*(\@|\[|\]|\^|\`|\{|\}|\~).* [NC,OR]
+  RewriteCond %{REQUEST_URI} ^.*(\'|%0A|%0D|%27|%3C|%3E|%00).* [NC,OR]
+  RewriteCond %{REQUEST_URI} (scripts|phpmyadmin|mydatadmin|myadmin|mysql-admin|sqladmin)/ [NC,OR]
+  RewriteCond %{REQUEST_URI} ^/*(webdb|admin|sql|db|pma|mysql)/ [NC,OR]
+  RewriteCond %{REQUEST_URI} setup\.php [NC]
+  RewriteRule ^(.*)$ - [F,L]
+
+# --
+# No query string hacks
+# --
+  RewriteCond %{QUERY_STRING} ^.*(localhost|loopback|127\.0\.0\.1).*                                [NC,OR]
+  RewriteCond %{QUERY_STRING} ^.*(\*|;|<|>|'|"|\)|%0A|%0D|%22|%27|%3C|%3E|%00).*                 [NC,OR]
+  RewriteCond %{QUERY_STRING} ftp\:   [NC,OR]
+  RewriteCond %{QUERY_STRING} http\:  [NC,OR]
+  RewriteCond %{QUERY_STRING} https\: [NC]
+  RewriteRule ^(.*)$ - [F,L]
+
+##############################################################
+
+
+
+#  RewriteCond %{HTTP_HOST} ^[a-z0-9-]+\.[a-z]{2,3}$ [NC]
+#  RewriteRule ^(.*) http://www.%{HTTP_HOST}/$1 [R=301,L]
+
+  RewriteRule ^mail\.(track|click|online|unsubscribe)/([a-z0-9]+)/(.+)$ mail.track.php?op=$1&id=$2&arg=$3 [L]
+  RewriteRule ^(thumb|crop)/.*$ shared/cyane/thumb.php [NC,L]
+  RewriteRule ^robots.txt$ shared/cyane/robots.txt.php [L]
+  
+  RewriteRule ^$ index.php [L]
+  RewriteRule ^index\.\w+$ index.php [L]
+  
+  RewriteRule ^ccms$ /ccms/ [R=301,L]
+  
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ccms/ ccms.php [L]
+
+  RewriteCond %{REQUEST_URI} !^/ccms/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^[^\.]+(\.html|\.php|\.htm|\.xhtml|\.cfm|\.xml|\.rss|\.json|\.aspx)$ index.php [NC,L]
+
+  RewriteCond %{REQUEST_URI} !^/ccms/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^[^\.]+$ index.php [NC,L]
+  
+  <IfModule !mod_expires.c>
+    RewriteCond %{REQUEST_URI} !/ccms/
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule \.(gif|png|jpeg|jpg|jpe|ico|js|json|css|xml|swf)$ shared/cyane/mod_expires.php [NC,L]
+  </IfModule>
+  
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 index.php
+</IfModule> 

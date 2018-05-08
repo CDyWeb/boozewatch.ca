@@ -1,0 +1,36 @@
+<?
+
+$fixtures[tbl_name('size')]=array(
+  array(
+    'id'=>1,
+    'sizegroup'=>1,
+    'name'=>'s11',
+  ),
+  array(
+    'id'=>2,
+    'sizegroup'=>1,
+    'name'=>'s12',
+  ),
+  array(
+    'id'=>3,
+    'sizegroup'=>1,
+    'name'=>'s13',
+  ),
+  array(
+    'id'=>4,
+    'sizegroup'=>2,
+    'name'=>'s24',
+  ),
+  array(
+    'id'=>5,
+    'sizegroup'=>2,
+    'name'=>'s25',
+  ),
+  array(
+    'id'=>6,
+    'sizegroup'=>2,
+    'name'=>'s26',
+  ),
+);
+
+//end

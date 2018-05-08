@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+	
+	RewriteRule ckeditor/ckconfig.php ckconfig.php [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^(.*)$ cke.php [L]
+
+</IfModule>
